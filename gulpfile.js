@@ -6,6 +6,7 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const cache = require('gulp-cache');
 const autoprefixer = require('gulp-autoprefixer');
+const include = require('gulp-include');
 
 // styles
 const sass = require('gulp-sass');
@@ -58,6 +59,7 @@ function styles() {
 //scripts
 function scripts() {
 	return gulp.src(paths.scripts.src)
+		.pipe(include())
 		.pipe(gulp.dest(paths.scripts.dest));
 }
 

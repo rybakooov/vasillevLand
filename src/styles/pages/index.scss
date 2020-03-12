@@ -1,0 +1,832 @@
+.input-error{
+  border-color: red !important;
+}
+
+.input-valid{
+  border-color: #000000 !important;
+}
+input:focus{
+  border-color: #6F97F3 !important;
+}
+.banner{
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  &-bot{
+    padding: 40px 20px 16px;
+    display: flex;
+    &-item{
+      width: calc(100% / 6 - 20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__text{
+        font-weight: 500;
+        margin-top: 24px;
+      }
+      &__subtext{
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(0, 0, 0, 0.75);
+      }
+      &:not(:last-child){
+        margin-right: 20px;
+      }
+    }
+  }
+  &-main{
+    padding-top: 80px;
+    position: relative;
+    background: #F7F7F7;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    &-grid{
+      position: relative;
+      z-index: 2;
+      &__title{
+        font-family: 'Visby CF';
+        font-weight: 500;
+        font-size: 64px;
+        line-height: 77px;
+        letter-spacing: 0.03em; 
+        margin-bottom: 24px;
+      }
+      &__text{
+        line-height: 150%;
+        color: rgba(0, 0, 0, 0.5);
+        max-width: 592px;
+        margin-bottom: 64px;
+      }
+      &-bot{
+        display: flex;
+        align-items: center;
+        margin-bottom: 80px;
+        &__price{
+          margin-left: 40px;
+          font-size: 20px;
+          line-height: 150%;
+        }
+      }
+      &__aboutDoctor{
+        display: flex;
+        align-items: center;
+        line-height: 150%;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.75);
+        &:hover{
+          svg{
+            transform: rotate(180deg);
+          }
+        }
+        svg{
+          transform-origin: center center;
+          transition: .3s;
+          margin-left: 10px;
+        }
+      }
+    }
+    &-woman{
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
+      img{
+        height: 100%;
+        width: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.result{
+  padding-top: 184px;
+  &__title{
+    font-family: 'Visby CF';
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+  }
+  &__text{
+    margin-bottom: 64px;
+    line-height: 150%;
+    max-width: 620px;
+    color: rgba(0, 0, 0, 0.75);
+  }
+  &-wrap{
+    margin: -40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-item{
+    width: calc(100% / 3 - 80px);
+    margin: 40px;
+    &-imgbox{
+      padding-bottom: 100%;
+      position: relative;
+      margin-bottom: 16px;
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+    &__title{
+      margin-bottom: 16px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    &__text{
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+.views{
+  margin-top: 176px;
+  position: relative;
+  padding-bottom: 148px;
+  &__title{
+    font-family: 'Visby CF';
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.03em;
+    margin-bottom: 64px;
+  }
+  &-woman{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  &__btn{
+    /*margin-bottom: 148px;*/
+  }
+}
+.tabs{
+  padding: 16px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  margin-bottom: 64px;
+  position: relative; 
+  &__tab{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    display: inline;
+    transition: .3s;
+    color: rgba(0, 0, 0, 0.25);
+    &:not(:last-child){
+      margin-right: 40px;
+    }
+    &.active{
+      color: #24499E;
+    }
+  }
+  &__slide{
+    height: 2px;
+    width: 0px;
+    position: absolute;
+    bottom: -2px;
+    transition: .4s;
+    transition-timing-function: ease-in-out;
+    left: 0;
+    background-color: #24499E;
+  }
+}
+.blocks{
+  &_views{
+    margin-bottom: 64px;
+    max-width: 536px;
+  }
+  &__block{
+    display: none;
+  }
+}
+.stages-wrap{
+  background: #F7F7F7;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 168px;
+}
+
+.stages{
+  &__title{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+  }
+  &__text{
+    max-width: 610px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    margin: 0 auto 165px;
+  }
+  &-row{
+    display: flex;
+    justify-content: space-between;
+  }
+  &-item{
+    width: calc(100% / 3 - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:not(:last-child){
+      margin-right: 40px;
+    }
+    &-imgbox{
+      position: relative;
+      margin-bottom: 40px;
+      img{
+        max-width: 280px;
+        width: 280px;
+      }
+      &__text{
+        position: absolute;
+        bottom: calc(100% - 32px);
+        left: calc(50% + 41px);
+        font-size: 16px;
+        line-height: 150%;
+        font-family: 'Visby CF';
+        font-style: italic;
+        color: #969696;
+        width: 140px;
+      }
+    }
+    &__title{
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 150%;
+      margin-bottom: 16px;
+    }
+    &__text{
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      max-width: 280px;
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+
+.about{
+  display: flex;
+  padding-top: 120px;
+  height: 100vh;
+  min-height: 700px;
+  &-img{
+    width: 50%;
+    padding-right: 88px;
+    align-self: flex-end;
+    img{
+      margin-left: auto;
+    }
+  }
+  &-desc{
+    width: 50%;
+    &__title{
+      font-family: 'Visby CF';
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 43px;
+      letter-spacing: 0.03em;
+      margin-bottom: 40px;
+    }
+    &__text{
+      display: flex;
+      align-items: center;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.75);
+      margin-bottom: 24px;
+      img{
+        margin-right: 16px;
+        flex-shrink: 0;
+      }
+    }
+  }
+  .tabs-wrap{
+    margin-top: 48px; 
+  }
+  .tabs{
+    margin-bottom: 40px;
+  }
+  &-block-row{
+    display: flex;
+    &:not(:last-child){
+      margin-bottom:  16px;
+    }
+    &__when{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #6C82B6;
+      white-space: nowrap;
+      width: 25%;
+    }
+    &__what{
+      font-size: 16px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+
+.clinic{
+
+  &-arrows{
+    position: absolute;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    button{
+      svg{
+        display: block;
+      }
+    }
+  }
+  &-slider{
+    width: 100%;
+    height: 100%;
+    .slick-list, .slick-track{
+      height: 100%;
+    }
+    &__item{
+      width: 100%;
+      height: 100%;
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+    &-wrap{
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+    }
+  }
+  &-desc{
+    max-width: 1160px;
+    width: 100%;
+    margin: -120px auto 0;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    &-wrap{
+      padding: 0 20px;
+    }
+    &-head{
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 80px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__title{
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        color: #000000;
+      }
+      &__text{
+        font-size: 14px;
+        line-height: 150%;
+        text-align: right;
+      }
+    }
+    &-main{
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      &-item{
+        width: calc(100% / 3);
+        padding: 40px;
+        &__title{
+          margin-top: 24px;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 125%;
+        }
+        &__text{
+          margin-top: 24px;
+          font-size: 16px;
+          line-height: 150%;
+        }
+        &:not(:last-child){
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    &-bot{
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__btn{
+        margin-bottom: 148px;;
+      }
+      &__link{
+        font-size: 14px;
+        line-height: 150%;
+        text-align: right;
+        text-decoration-line: underline;
+        color: rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+}
+
+.features{
+  .views-woman{
+    transform-origin: bottom right;
+    transform: scale(0.9);
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.75);
+      &:not(:last-child){
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+.recomended{
+  padding-top: 64px;
+  padding-bottom: 64px;
+  position: relative;
+  &-wrap{
+    background: #24499E;
+  }
+  &__title{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 150%;
+    font-family: 'Visby CF';
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+  }
+  &-ul{
+    max-width: 1120px;
+    column-count: 2;
+    margin-bottom: -24px !important;
+    &__li{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: #FFFFFF;
+      margin-bottom: 24px;
+    }
+  }
+  &__download{
+    top: 86px;
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    text-decoration: none;
+    svg{
+      margin-right: 10px;
+    }
+  }
+}
+
+.rehab{
+  padding-top: 108px;
+  margin-bottom: 160px;
+  &__title{
+    font-weight: 600;
+    font-family: 'Visby CF';
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    margin-bottom: 40px;
+  }
+  &__text{
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 80px;
+    max-width: 800px;
+  }
+  &-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -40px -10px;
+  }
+  &-item{ 
+    max-width: 620px;
+    margin: 40px 10px;
+    &__title{
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: #24499E;
+      margin-bottom: 8px;
+    }
+    &__text{
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+
+.faq{
+
+  &__title{
+    font-weight: 600;
+    font-family: 'Visby CF';
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  &-wrap{
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-bottom: 160px;
+  }
+  &-item{
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    &:first-child{
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    &.active{
+      .faq-item-top__close span:nth-child(1){
+        transform: rotate(0);
+      }
+    }
+    &-top{
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      justify-content: space-between;
+      &__title{
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        color: #24499E;
+      }
+      &__close{
+        width: 26px;
+        position: relative;
+        height: 26px;
+        flex-shrink: 0;
+        span{
+          width: 26px;
+          height: 2px;
+          display: block;
+          position: absolute;
+          top: 50%;
+          background: #808080;
+          transform-origin: center center;
+          transition: .3s;
+          &:nth-child(1){
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    &-main{
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: rgba(0, 0, 0, 0.75);
+      max-width: 800px;
+      display: none;
+    }
+  }
+}
+
+.form{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  &-wrap{
+    background: #F7F7F7;
+    &__title{
+      font-weight: 600;
+      font-family: 'Visby CF';
+      margin-bottom: 80px;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+  &__title{
+    font-family: 'Visby CF';
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    margin-bottom: 80px;
+  }
+  &-wrapper{
+    display: flex;
+  }
+  &-left{
+    flex: 1 1 50%;
+    &-bot{
+      display: flex;
+      align-items: center;
+      &__text{
+        margin-left: 40px;
+        font-size: 12px;
+        line-height: 150%;
+        color: rgba(0, 0, 0, 0.25);
+
+      }
+    }
+  }
+  &-wrapperFields{
+    margin: 0 -20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-label{
+    font-size: 14px;
+    line-height: 17px;
+    display: block;
+    margin: 0 20px 80px;
+    flex: 1 1 calc(50% - 40px);
+    input{
+      display: block;
+      width: 100%;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid #000000;
+      height: 50px;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+
+      &::placeholder{
+        color: rgba(0, 0, 0, 0.25);
+      }
+    }
+    &_file{
+      flex: 0 0 auto;
+      align-self: flex-end;
+      cursor: pointer;
+      position: relative;
+      &:hover{
+        .form-file-overlay{
+          opacity: 1;
+        }
+      }
+      .form-file{
+        display: flex;
+        position: relative;
+        z-index: 2;
+        &-overlay{
+          position: absolute;
+          z-index: 0;
+          top: -12px;
+          left: -12px;
+          width: calc(100% + 24px);
+          background: #F7F7F7;
+          box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+          height: calc(100% + 24px);
+          opacity: 0;
+          transition: .3s;
+          &__progress{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0px;
+            height: 2px;
+            background-color: #21C046;
+            z-index: 4;
+            display: none;
+          }
+        }
+        &__close{
+          position: absolute;
+          bottom: -10px;
+          z-index: 3;
+          right: -10px;
+          padding: 10px;
+          display: none;
+          svg{
+            path{
+              transition: .3s;
+            }
+          }
+          &:hover{
+            svg{
+              path{
+                stroke: #EA4753;
+              }
+            }
+          }
+        }
+        svg{
+          margin-top: 3px;
+          margin-right: 9px;
+        }
+        &__title{
+          font-size: 14px;
+          line-height: 17px;
+        }
+        &__text{
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          color: rgba(0, 0, 0, 0.25);
+        }
+      }
+      input{
+        display: none;
+      }
+    }
+  }
+  &-right{
+    flex: 1 1 50%;
+    padding-left: 160px;
+    &__phone{
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 43px;
+      display: inline-block;
+      align-items: flex-end;
+      text-decoration: none;
+      color: #000000;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    &__quick{
+      position: absolute;
+      margin-bottom: 10px;
+      left: calc(100% + 24px);
+      bottom: 0;
+      p{
+        font-size: 16px;
+        line-height: 150%;
+        color: #969696;
+        font-family: 'Visby CF';
+        display: block;
+        padding-left: 50px;
+        margin-bottom: 8px;
+        font-weight: normal;
+        font-style: italic;
+        white-space: nowrap;
+      }
+    }
+    &__text{
+      margin-bottom: 8px;
+      line-height: 150%;
+    }
+    &-social{
+      display: flex;
+      align-items: center;
+      margin-top: 24px;
+      a{
+        &:not(:last-child){
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
