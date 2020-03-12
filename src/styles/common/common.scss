@@ -31,13 +31,39 @@ button{
   font-weight: 500;
   line-height: 17px;
   box-shadow: 1px 2px 10px rgba(111, 151, 243, 0.1);
+  transition: .3s;
   &_blue{
     background-color: #6F97F3;
     color: #fff;
+    &:hover{
+      @media screen and (min-width: 1024px){
+        background: #4A7FF8;
+      }
+    }
+    &:active{
+      @media screen and (min-width: 1024px){
+        background: #6F97F3;
+      }
+    }
   }
   &_white{
     border: 2px solid #6F97F3;
     background-color: #fff;
     color: #6F97F3;
+    transition: .3s;
+    &:hover{
+      @media screen and (min-width: 1024px){
+        background: #4A7FF8;
+        color: #FFFFFF;
+        border-color: #4A7FF8;
+      }
+    }
+    &:active{
+      @media screen and (min-width: 1024px){
+        background: #6F97F3;
+        color: #FFFFFF;
+        border-color: #6F97F3;
+      }
+    }
   }
 } 

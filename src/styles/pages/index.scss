@@ -1,5 +1,5 @@
 .input-error{
-  border-color: red !important;
+  border-color: #F36F6F !important;
 }
 
 .input-valid{
@@ -37,11 +37,12 @@ input:focus{
     }
   }
   &-main{
-    padding-top: 80px;
+    padding-top: 100px;
     position: relative;
     background: #F7F7F7;
     display: flex;
     flex: 1;
+    padding-bottom: 20px;
     align-items: center;
     &-grid{
       position: relative;
@@ -76,15 +77,22 @@ input:focus{
         line-height: 150%;
         cursor: pointer;
         color: rgba(0, 0, 0, 0.75);
+        transition: .3s;
         &:hover{
-          svg{
-            transform: rotate(180deg);
+          @media screen and (min-width: 1024px){
+            color: #6F97F3;
+            svg{
+              path{
+                fill: #6F97F3;
+              }
+            }
           }
         }
         svg{
-          transform-origin: center center;
-          transition: .3s;
           margin-left: 10px;
+          path{
+            transition: .3s;
+          }
         }
       }
     }
@@ -130,6 +138,10 @@ input:focus{
       padding-bottom: 100%;
       position: relative;
       margin-bottom: 16px;
+      @media screen and (min-width: 1024px){
+        transition: .1s;
+        transform-origin: center center;
+      }
       img{
         width: 100%;
         height: 100%;
@@ -138,6 +150,17 @@ input:focus{
         left: 0;
         object-fit: cover;
         object-position: center center;
+        cursor: pointer;
+        @media screen and (min-width: 1024px){
+          transform-origin: center bottom;
+          transition-timing-function: ease-in-out;
+          transition: .5s;
+        }
+        &:hover{
+          @media screen and (min-width: 1024px){
+            transform: scale(1.065);
+          }
+        }
       }
     }
     &__title{
@@ -156,6 +179,10 @@ input:focus{
 .views{
   margin-top: 176px;
   position: relative;
+  /*height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;*/
   padding-bottom: 148px;
   &__title{
     font-family: 'Visby CF';
@@ -163,15 +190,15 @@ input:focus{
     font-size: 36px;
     line-height: 43px;
     letter-spacing: 0.03em;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
   &-woman{
     position: absolute;
     bottom: 0;
     right: 0;
   }
-  &__btn{
-    /*margin-bottom: 148px;*/
+  .btn{
+    //margin-top: auto;
   }
 }
 .tabs{
@@ -198,7 +225,7 @@ input:focus{
     height: 2px;
     width: 0px;
     position: absolute;
-    bottom: -2px;
+    bottom: -1px;
     transition: .4s;
     transition-timing-function: ease-in-out;
     left: 0;
@@ -206,6 +233,7 @@ input:focus{
   }
 }
 .blocks{
+  transition: .3s;
   &_views{
     margin-bottom: 64px;
     max-width: 536px;
@@ -330,6 +358,26 @@ input:focus{
   }
   &-block-row{
     display: flex;
+    position: relative;
+    &:before{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: radial-gradient(50% 28500.78% at 50% 50%, rgba(111, 151, 243, 0.1) 90.1%, rgba(196, 196, 196, 0) 100%);
+      opacity: 0;
+      transition: .3s;
+    }
+    &:hover{
+      &:before{
+        @media screen and (min-width: 1024px){
+          opacity: 1;
+        }
+      }
+    }
     &:not(:last-child){
       margin-bottom:  16px;
     }
@@ -499,14 +547,14 @@ input:focus{
   &-ul{
     max-width: 1120px;
     column-count: 2;
-    margin-bottom: -24px !important;
+    margin-bottom: -32px !important;
     &__li{
       font-weight: 500;
       font-size: 16px;
       line-height: 150%;
       letter-spacing: 0.03em;
       color: #FFFFFF;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
   }
   &__download{
@@ -580,18 +628,30 @@ input:focus{
     letter-spacing: 0.03em;
     text-align: center;
     margin-bottom: 80px;
+    padding: 0 20px;
   }
 
   &-wrap{
-    max-width: 1160px;
-    margin: 0 auto;
     padding-bottom: 160px;
   }
   &-item{
     padding: 40px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    &:first-child{
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 1160px;
+    margin: 0 auto;
+    &-wrap{
+      padding: 0 20px;
+      transition: .3s;
+      background: #fff;
+      cursor: pointer;
+      &:hover{
+        @media screen and (min-width: 1024px){
+          background: rgba(111, 151, 243, 0.1);
+        }
+      }
+      &:first-child .faq-item{
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
     }
     &.active{
       .faq-item-top__close span:nth-child(1){
@@ -601,12 +661,12 @@ input:focus{
     &-top{
       display: flex;
       align-items: center;
-      cursor: pointer;
       justify-content: space-between;
       &__title{
         font-size: 20px;
         line-height: 150%;
         letter-spacing: 0.03em;
+        font-weight: 500;
         color: #24499E;
       }
       &__close{
@@ -689,6 +749,7 @@ input:focus{
     display: block;
     margin: 0 20px 80px;
     flex: 1 1 calc(50% - 40px);
+    position: relative;
     input{
       display: block;
       width: 100%;
@@ -696,6 +757,8 @@ input:focus{
       background: transparent;
       border-bottom: 2px solid #000000;
       height: 50px;
+
+      transition: .3s;
 
       font-weight: 500;
       font-size: 14px;
@@ -705,6 +768,20 @@ input:focus{
       &::placeholder{
         color: rgba(0, 0, 0, 0.25);
       }
+      &.input-error + .form-label__alert{
+        display: block;
+      }
+      &.input-valid + .form-label__alert{
+        display: none;
+      }
+    }
+    &__alert{
+      display: none;
+      font-size: 12px;
+      line-height: 15px;
+      color: #F36F6F;
+      position: absolute;
+      bottom: -19px;
     }
     &_file{
       flex: 0 0 auto;
