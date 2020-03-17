@@ -9,11 +9,51 @@ function slideTabs(_this){
 }
 /* табы end */
 
+/* сдвиг от правой стороны хедера и серого меню */
+function moveHeader (){
+  $('.header__burger').css('margin-right', Math.round($('.banner-main-woman img').width() * 0.74))
+  $('.header-gray').css('width', $('.header-overlay').width() - $('.header-info__phone').offset().left + 80)
+}
+/* сдвиг от правой стороны хедера и серого меню end */
 
+/* функция валидации файлового инпута */
+const _maxFilesize = 20971520;
+function valideteFiles (file){
+  var j = 0;
+  var NumberOfFiles = file.length;
+  var sumFiles = 0;
+  file.value = '';
+  for(j; j< NumberOfFiles;j++){
+    sumFiles+=file[j].size;
+  }
+  if (sumFiles >= _maxFilesize ){
+    return true
+  } else {
+    return false
+  }
+}
+
+/* функция валидации файлового инпута end */
+
+
+/* preloader + aos + moveheader */
+$(window).on('load', function () {
+  $('.preloader').fadeOut();
+  moveHeader();
+  AOS.init({
+    disable: function () {
+      var maxWidth = 1023;
+      return window.innerWidth > maxWidth;
+    }
+  });
+});
+/* preloader + aos + moveheader end */
 
 
 $(document).ready(function(){
   
+  
+
   /* табы */
   $('.tabs-wrap').each(function(){
     slideTabs($(this));
@@ -95,21 +135,7 @@ $(document).ready(function(){
     $(this).siblings('.form-file').find('.form-file__text').html(`До 20 мб`)
   })
 
-  const _maxFilesize = 20971520;
-  function valideteFiles (file){
-    var j = 0;
-    var NumberOfFiles = file.length;
-    var sumFiles = 0;
-    file.value = '';
-    for(j; j< NumberOfFiles;j++){
-      sumFiles+=file[j].size;
-    }
-    if (sumFiles >= _maxFilesize ){
-      return true
-    } else {
-      return false
-    }
-  }
+  
   /* form file input end */
 
 
@@ -246,10 +272,7 @@ $(document).ready(function(){
   
   /* header position */ 
 
-  function moveHeader (){
-    $('.header__burger').css('margin-right', Math.round($('.banner-main-woman img').width() * 0.74))
-    $('.header-gray').css('width', $('.header-overlay').width() - $('.header-info__phone').offset().left + 80)
-  }
+  
 
   $('.banner-main-woman img').on('load', function() {
     setTimeout(function(){
@@ -321,7 +344,7 @@ $(document).ready(function(){
 
 
 		var speed = 1000;
-		var top = $(`${$(this).attr('href')}`).offset().top;
+		var top = $(`${$(this).attr('href')}`).offset().top - 52;
 		$('html, body').animate({scrollTop: top}, speed);
 		return false;
   })
@@ -329,20 +352,23 @@ $(document).ready(function(){
 
 
   $(window).on('scroll', function(){
+
+    /* при скролле показываем убираем навбар */
     if ($(window).scrollTop() > 400) {
       $('.navbar').addClass('active');
     } else {
       $('.navbar').removeClass('active');
     }
+    /* при скролле показываем убираем навбар end */
 
 
 
+    
+      
+    /*Закрываем меню при скролле */
     if (flagAnimated == 1) {
       return false
     }
-      
-    
-
     flagAnimated = 1;
     $('.header__burger').removeClass('active');
     $('.header-overlay').removeClass('active');
@@ -350,6 +376,7 @@ $(document).ready(function(){
       $('.header-overlay').hide();
       flagAnimated = 0;
     }, 500)
+    /*Закрываем меню при скролле */
   })
 });
 
@@ -357,10 +384,5 @@ $(document).ready(function(){
 
 
 
-$(window).on('load', function () {
-  $('.preloader').fadeOut();
-  AOS.init();
-  moveHeader();
-});
 
 
