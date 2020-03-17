@@ -5,11 +5,16 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     link(rel="stylesheet", href="assets/styles/app.min.css")
-    script(src="assets/scripts/jquery.min.js")
-    script(src="assets/scripts/slick.min.js")
-    script(src="assets/scripts/imask.js")
-    script(src="assets/scripts/main.js")
+    link(rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
+    link(rel="shortcut icon", href="assets/images/favicon.png", type="image/png")
     title 
       block title
   body
-    block content
+    .wrapper
+      block content
+    script(src="assets/scripts/jquery.min.js")
+    script(src="assets/scripts/slick.min.js")
+    script(src="assets/scripts/imask.js")
+    script(src="assets/scripts/jquery.fancybox.min.js")
+    script(src="https://unpkg.com/aos@next/dist/aos.js")
+    script(src="assets/scripts/main.js")

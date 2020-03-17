@@ -1,13 +1,19 @@
 body{
   font-family: Montserrat;
 }
-
+a{
+  text-decoration: none;
+}
 .w1400{
   max-width: 1400px;
   padding: 0 20px;
   margin: 0 auto;
   width: 100%;
 } 
+
+.wrapper{
+  overflow-x: hidden;
+}
 
 *, *:focus, *:hover, *:active{
   outline: none;

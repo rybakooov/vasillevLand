@@ -10,12 +10,16 @@ function slideTabs(_this){
 /* табы end */
 
 
+
+
 $(document).ready(function(){
   
   /* табы */
   $('.tabs-wrap').each(function(){
     slideTabs($(this));
-    $(this).find('.blocks').css('height', $(this).find('.blocks__block.active').height());
+    if(screen.width > 1023){
+      $(this).find('.blocks').css('height', $(this).find('.blocks__block.active').height());
+    }
   })
 
 
@@ -26,12 +30,13 @@ $(document).ready(function(){
     var _this = $(this).closest('.tabs-wrap');
     _this.find($('.tabs__tab.active')).removeClass('active');
     $(this).addClass('active');
-    /*console.log($('.blocks__block:animated').stop());*/
     _this.find($('.blocks__block.active')).removeClass('active').fadeToggle();
     setTimeout(() => {
       _this.find($(`.blocks__block[data-tabs="${$(this).attr('data-tabs')}"]`)).addClass('active').fadeToggle();
-      
-      _this.find('.blocks').css('height', _this.find('.blocks__block.active').height());
+      if(screen.width > 1023){
+        _this.find('.blocks').css('height', _this.find('.blocks__block.active').height());
+      }
+    
     }, 400)
 
 
@@ -48,6 +53,7 @@ $(document).ready(function(){
       infinite: true,
       prevArrow: $('.clinic-arrows__prev'),
       nextArrow: $('.clinic-arrows__next'),
+      fade: true
     })
   }
   /* clinic slider end */
@@ -95,12 +101,9 @@ $(document).ready(function(){
     var NumberOfFiles = file.length;
     var sumFiles = 0;
     file.value = '';
-    console.log(file);
     for(j; j< NumberOfFiles;j++){
       sumFiles+=file[j].size;
     }
-    console.log(sumFiles);
-    console.log(_maxFilesize);
     if (sumFiles >= _maxFilesize ){
       return true
     } else {
@@ -137,6 +140,11 @@ $(document).ready(function(){
     })
     if(valid) {
       console.log('Отправили форму');
+      $('.success').fadeIn().css('display', 'flex');
+      $(this).closest('form').find('input').val('');
+      setTimeout(function(){
+        $('.success').fadeOut();
+      }, 2000)
     } else {
       console.log('Не отправили форму');
     }
@@ -218,12 +226,18 @@ $(document).ready(function(){
   }
 
   function mousemoveImgHandler(e){
+    if (screen.width < 1024) {
+      return
+    }
     let x1 = (-(200 - e.offsetX) * 0.05),
         y1 = (-(200 - e.offsetY) * 0.05);
     $(this).attr('style', 'transform: translate(' + x1 + 'px, ' + y1 + 'px)');
   }
 
   function mouseleaveImgHandler (){
+    if (screen.width < 1024) {
+      return
+    }
     $(this).attr('style', '');
   }
 
@@ -238,14 +252,18 @@ $(document).ready(function(){
   }
 
   $('.banner-main-woman img').on('load', function() {
-    
-    moveHeader();
+    setTimeout(function(){
+      moveHeader();
+    }, 1)
   });
 
   $(window).resize(function(){
     moveHeader();
   })
 
+  setInterval(function(){
+    moveHeader();
+  }, 100)
   /* header position end */
 
 
@@ -277,27 +295,72 @@ $(document).ready(function(){
 
   })
 
-
   $(document).on('click', '.header-overlay', function(e){
+    if (flagAnimated == 1) {
+      return false
+    }
     if (e.target !== this)
       return;
       
+    flagAnimated = 1;
       
     $('.header__burger').toggleClass('active');
     $('.header-overlay').toggleClass('active');
     setTimeout(function(){
       $('.header-overlay').toggle();
+      flagAnimated = 0;
     }, 500)
   })
 
   /* burger + menu end */ 
 
 
+  /* anchors */
+  $(document).on('click', '.header-nav__link, .navbar-row__link, .navbar__call', function(e){
+    
 
+
+		var speed = 1000;
+		var top = $(`${$(this).attr('href')}`).offset().top;
+		$('html, body').animate({scrollTop: top}, speed);
+		return false;
+  })
+  /* anchors end */
+
+
+  $(window).on('scroll', function(){
+    if ($(window).scrollTop() > 400) {
+      $('.navbar').addClass('active');
+    } else {
+      $('.navbar').removeClass('active');
+    }
+
+
+
+    if (flagAnimated == 1) {
+      return false
+    }
+      
+    
+
+    flagAnimated = 1;
+    $('.header__burger').removeClass('active');
+    $('.header-overlay').removeClass('active');
+    setTimeout(function(){
+      $('.header-overlay').hide();
+      flagAnimated = 0;
+    }, 500)
+  })
 });
 
 
 
 
+
+$(window).on('load', function () {
+  $('.preloader').fadeOut();
+  AOS.init();
+  moveHeader();
+});
 
 
