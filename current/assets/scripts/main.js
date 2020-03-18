@@ -359,7 +359,7 @@ $(document).ready(function(){
 
 
   
-  $(document).on('click', '.header-nav__link, .navbar-row__link', function(e){
+  $(document).on('click', '.header-nav__link, .navbar-row__link, .banner-main-grid__aboutDoctor', function(e){
 		var speed = 1000;
 		var top = $(`${$(this).attr('href')}`).offset().top - 52;
 		$('html, body').animate({scrollTop: top}, speed);
