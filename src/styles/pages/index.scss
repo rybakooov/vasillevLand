@@ -1320,7 +1320,7 @@ input:focus{
   }
 
   .banner-main{
-    height: 100vh;
+    height: 650px;
     max-height: 650px;
   }
   .banner-main-grid-bot{
@@ -1617,10 +1617,16 @@ input:focus{
     padding-top: 80px;
   }
 
-
 }
 
-
+@media screen and (max-width: 767px){
+  .form-label{
+    margin: 40px 16px 0;
+  }
+  .form-left-bot{
+    margin-top: 40px;
+  }
+}
 
 
 @media screen and (max-width: 359px){
