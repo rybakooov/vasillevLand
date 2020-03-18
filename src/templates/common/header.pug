@@ -36,6 +36,15 @@ header.header
             img(src="assets/images/social/insta.svg", alt="Instagram")
           a(href="#")
             img(src="assets/images/social/fb.svg", alt="Facebook")
+      .header-overlay-contacts
+        a(href="tel: +7 (911) 737-37-37").header-overlay-contacts__phone +7 (911) 737-37-37
+        .header-overlay-contacts-media
+          a(href="#")
+            img(src="assets/images/social/telegram.svg", alt="Telegram")
+          a(href="#")
+            img(src="assets/images/social/viber.svg", alt="Viber")
+          a(href="#")
+            img(src="assets/images/social/whats.svg", alt="What`s Up")
 section.navbar
   .w1400.navbar-wrap
     .navbar__title Ринопластика
@@ -47,4 +56,8 @@ section.navbar
       a(href="#clinic").navbar-row__link О клинике
       a(href="#features").navbar-row__link Особенности операции
       a(href="#rehab").navbar-row__link Реабилитация
-    a(href="#form").btn.btn_blue.navbar__call Записаться
+    a(data-popup).btn.btn_blue.navbar__call Записаться
+    <svg class="header__burger" width="32" height="32" viewBox="0 0 32 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="32" height="2px" fill="black"/>
+      <rect x="0" y="8" width="20" height="2px" fill="black"/>
+    </svg>

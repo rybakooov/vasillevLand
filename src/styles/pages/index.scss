@@ -12,6 +12,7 @@
   left: 0;
   background-color: #fff;
   z-index: 20;
+  padding: 24px;
   img{
     
   }
@@ -145,6 +146,9 @@ input:focus{
     margin: -40px;
     display: flex;
     flex-wrap: wrap;
+  }
+  &__more{
+    display: none;
   }
   &-item{
     width: calc(100% / 3 - 80px);
@@ -923,7 +927,28 @@ input:focus{
     }
   }
 }
-
+.form-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #F7F7F7;
+  z-index: 10;
+  &-wrap{
+    padding: 24px;
+    max-height: 100vh;
+    overflow: auto;
+  }
+  &__close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
 
 
 @media screen and (max-width: 1400px){
@@ -1254,8 +1279,8 @@ input:focus{
     line-height: 24px;
   }
   .form-right__phone{
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 28px;
+    line-height: 32px;
   }
   .form-right{
     //padding-top: 114px;
@@ -1408,6 +1433,191 @@ input:focus{
   .about-desc-top-wrap{
     max-width: none;
   }
+  .banner-bot-item__text{
+    font-size: 14px;
+  }
+  .banner-bot-item__subtext{
+    white-space: normal;
+  }
+  .result__title{
+    margin-bottom: 16px;
+  }
+  .result__text{
+    font-size: 14px;
+  }
+  .result-item__title{
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .result__more{
+    display: flex;
+    width: 100%;
+  }
+  .result-item{
+    margin-bottom: 64px;
+  }
+  .result-item:nth-child(3), .result-item:nth-child(4), .result-item:nth-child(5), .result-item:nth-child(6){
+    display: none;
+  }
+  .blocks__block{
+    font-size: 14px;
+  }
+  .views__btn{
+    display: none;  
+  }
+  .stages__title{
+    margin-bottom: 16px;
+  }
+  .stages__text{
+    font-size: 14px;
+    margin-bottom: 96px;
+  }
+  .stages-item-imgbox img{
+    margin: 0 auto 24px;
+  }
+  .stages-item__title{
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+  }
+  .stages-item__text{
+    max-width: none;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+  }
+  .stages-wrap{
+    padding-bottom: 80px;
+  }
+  .about-desc__text{
+    font-size: 14px;
+    align-items: flex-start;
+  }
+  .tabs__tab{
+    white-space: nowrap;
+  }
+  .about .tabs-wrap .tabs{
+    overflow: auto;
+  }
+  .about-block-row{
+    display: block;
+  }
+  .about-block-row__when{
+    width: auto;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .about-block-row__what{
+    font-size: 14px;
+  }
+  .about-block-row:not(:last-child){
+    margin-bottom: 24px;
+  }
+  .clinic-slider-wrap{
+    height: 300px;
+    min-height: 0;
+  }
+  .clinic-arrows button svg{
+    width: 30px;
+    height: 30px;
+  }
+  .clinic-desc{
+    margin-top: -40px;
+  }
+  .clinic-desc-head__title{
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+  }
+  .clinic-desc-head__text{
+    margin-top: 24px;
+  }
+  .clinic-desc-main-item{
+    padding: 40px 16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .clinic-desc-main-item__title{
+    margin-top: 0;
+    margin-left: 24px;
+  }
+  .clinic-desc-main-item svg{
+    height: 46px;
+  }
+  .clinic-desc-main-item__text{
+    width: 100%;
+    margin-top: 24px;
+    font-size: 14px;
+  }
+  .clinic-desc-bot .btn{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .clinic-desc-bot__link{
+    text-align: center;
+    display: block;
+  }
+  .views{
+    margin-top: 120px;
+  }
+  .features ul li:not(:last-child){
+    margin-bottom: 16px;
+  }
+  .recomended-ul__li{
+    font-size: 14px;
+  }
+  .rehab__title{
+    margin-bottom: 40px;
+  }
+  .rehab__text{
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .rehab-item__title{
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .rehab-item__text{
+    font-size: 14px;
+  }
+  .rehab{
+    margin-bottom: 40px;
+  }
+  .faq__title{
+    margin-bottom: 64px;
+  }
+  .faq-item-top{
+    align-items: flex-start;
+  }
+  .faq-item-top__title{
+    font-size: 18px;
+  }
+  .faq-item-main{
+    font-size: 14px;
+  }
+  .faq-wrap{
+    padding-bottom: 120px;
+  }
+  .form__title{
+    margin-bottom: 64px;
+  }
+  .form-wrap__title{
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .form-left-bot__btn{
+    width: 100%;
+  }
+  .form-left-bot__text{
+    text-align: center;
+  }
+  .form-right{
+    padding-top: 80px;
+  }
+
+
 }
 
 

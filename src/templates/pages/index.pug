@@ -9,9 +9,9 @@ block content
         h1.banner-main-grid__title Ринопластика
         p.banner-main-grid__text Красивый и аккуратный нос привлекает внимание к лицу не меньше, чем глаза. И каждому хочется, чтобы данная область идеально подчеркивала черты лица и не портила отражение в зеркале
         .banner-main-grid-bot
-          button.btn.btn_blue Запись на консультацию
+          button(data-popup).btn.btn_blue Запись на консультацию
           p.banner-main-grid-bot__price от 165 000 руб
-        a(href="#form").banner-main-grid__aboutDoctor Узнать о враче
+        a(href="#about").banner-main-grid__aboutDoctor Узнать о враче
           <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.35355 4.35355C9.54882 4.15829 9.54882 3.84171 9.35355 3.64645L6.17157 0.464466C5.97631 0.269204 5.65973 0.269204 5.46447 0.464466C5.2692 0.659728 5.2692 0.976311 5.46447 1.17157L8.29289 4L5.46447 6.82843C5.2692 7.02369 5.2692 7.34027 5.46447 7.53553C5.65973 7.7308 5.97631 7.7308 6.17157 7.53553L9.35355 4.35355ZM0 4.5H9V3.5H0V4.5Z" fill="black" fill-opacity="0.75"/>
           </svg>
@@ -100,6 +100,7 @@ block content
             img(src=`assets/images/result-${i}.png`, alt="Результат ринопластики")
           p.result-item__title Ринопластика #{i}
           p.result-item__text Результат через месяц #{i}
+    button.btn.btn_white.result__more Смотреть еще
   section#views.w1400.views
     p.views__title(data-aos="fade-up" data-aos-delay="700") Виды ринопластики
     .tabs-wrap(data-aos="fade" data-aos-delay="700")
@@ -112,7 +113,7 @@ block content
         .blocks__block.active(data-tabs="1") Открытая ринопластика: в основном такой способ применяется при сложных вмешательствах, где имеет место большой объем хирургического вмешательства. Доступ осуществляется на колюмелле (складка кожи между ноздрями). В результате выполнения данной методики поднимаются все мягкие ткани носа и полностью обнажаются все костно-хрящевые структуры с которыми становится удобно работать.
         .blocks__block(data-tabs="2") Закрытая ринопластика: более сложный метод  и требует от доктора, практически, ювелирной точности работы. Все разрезы при такой манипуляции скрыты и проводится внутри на слизистой оболочке. Главное преимущество - сохранение всех мягкотканных структур в том числе основных связок Scroll и Pitanguy, что в свою очередь дает более естественный вид носа.
         .blocks__block(data-tabs="3") Безоперационная ринопластика: это менее радикальная методика, которая позволяет без хирургического вмешательства устранить незначительные дефекты с помощью филлеров на основе гиалуроновой кислоты или специальных нитей.
-    button.btn.btn_white О враче
+    a.btn.btn_white.views__btn(href="#about") О враче
     .views-woman(data-aos="fade-left" data-aos-duration="700")
       img(src="assets/images/girl-views.png", alt="Виды ринопластики")
   section#stages.stages-wrap
@@ -222,11 +223,17 @@ block content
           </svg>
       .clinic-slider
         .clinic-slider__item
-          img(src="assets/images/clinic.png", alt="Клиника")
+          picture
+            source(srcset="assets/images/clinic.jp2" type="image/jp2")
+            img(src="assets/images/clinic.png", alt="Клиника")
         .clinic-slider__item
-          img(src="assets/images/clinic.png", alt="Клиника")
+          picture
+            source(srcset="assets/images/clinic.jp2" type="image/jp2")
+            img(src="assets/images/clinic.png", alt="Клиника")
         .clinic-slider__item
-          img(src="assets/images/clinic.png", alt="Клиника")
+          picture
+            source(srcset="assets/images/clinic.jp2" type="image/jp2")
+            img(src="assets/images/clinic.png", alt="Клиника")
     .clinic-desc-wrap
       .clinic-desc
         .clinic-desc-head
@@ -265,7 +272,7 @@ block content
             p.clinic-desc-main-item__title Медицинское <br>оформление
             p.clinic-desc-main-item__text Полное юридичиеское оформление позволяет сделать налоговый вычет
         .clinic-desc-bot
-          button.btn.btn_white(data-aos="fade-up") Хочу на экскурсию
+          button.btn.btn_white(data-aos="fade-up" data-popup) Хочу на экскурсию
           a(href="#" data-aos="fade-up" data-aos-delay="100").clinic-desc-bot__link Лицензия на осуществление <br>медицинской деятельности №76-843
   section#features.w1400.views.features
     p.views__title(data-aos="fade-up" data-aos-delay="700") Особенности операции
@@ -291,7 +298,7 @@ block content
             li Заболевания сердечно-сосудистой системы
             li Серьезные заболевания внутренних органов
             li Сахарный диабет и проблемы щитовидной железы не скорректированные
-    button.btn.btn_white.views__btn Онлайн консультация
+    button.btn.btn_white.views__btn(data-popup) Онлайн консультация
     .views-woman(data-aos="fade-left" data-aos-duration="700")
       img(src="assets/images/features.png", alt="Особенности операции по ринопластике")
   section.recomended-wrap
@@ -396,7 +403,7 @@ block content
                   <path d="M1 9L5 5M9 1L5 5M5 5L9 9M5 5L1 1" stroke="rgba(0, 0, 0, 0.25)" stroke-linecap="round"/>
                 </svg>
           .form-left-bot
-            button(type="submit" data-type="submit").btn.btn_blue.form-left-bot Жду звонка
+            button(type="submit" data-type="submit").btn.btn_blue.form-left-bot__btn Жду звонка
             p.form-left-bot__text Отправляя личные данные, Вы соглашаетесь с политикой конфиденциальности
         .form-right(data-aos="fade-left" data-aos-delay="300")
           p.form-wrap__title Позвоните

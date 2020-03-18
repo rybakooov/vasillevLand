@@ -29,13 +29,19 @@
               <p class="header-overlay-bot__text">Санкт-Петербург, ул. Полтавская, д. 7</p>
               <div class="header-overlay-bot-social"><a href="#"><img src="assets/images/social/vk.svg" alt="ВКонтакте"/></a><a href="#"><img src="assets/images/social/insta.svg" alt="Instagram"/></a><a href="#"><img src="assets/images/social/fb.svg" alt="Facebook"/></a></div>
             </div>
+            <div class="header-overlay-contacts"><a class="header-overlay-contacts__phone" href="tel: +7 (911) 737-37-37">+7 (911) 737-37-37</a>
+              <div class="header-overlay-contacts-media"><a href="#"><img src="assets/images/social/telegram.svg" alt="Telegram"/></a><a href="#"><img src="assets/images/social/viber.svg" alt="Viber"/></a><a href="#"><img src="assets/images/social/whats.svg" alt="What`s Up"/></a></div>
+            </div>
           </div>
         </div>
       </header>
       <section class="navbar">
         <div class="w1400 navbar-wrap">
           <div class="navbar__title">Ринопластика</div>
-          <nav class="navbar-row"><a class="navbar-row__link" href="#result">Портфолио</a><a class="navbar-row__link" href="#views">Виды ринопластики</a><a class="navbar-row__link" href="#stages">Этапы проведения</a><a class="navbar-row__link" href="#about">О хирурге</a><a class="navbar-row__link" href="#clinic">О клинике</a><a class="navbar-row__link" href="#features">Особенности операции</a><a class="navbar-row__link" href="#rehab">Реабилитация</a></nav><a class="btn btn_blue navbar__call" href="#form">Записаться</a>
+          <nav class="navbar-row"><a class="navbar-row__link" href="#result">Портфолио</a><a class="navbar-row__link" href="#views">Виды ринопластики</a><a class="navbar-row__link" href="#stages">Этапы проведения</a><a class="navbar-row__link" href="#about">О хирурге</a><a class="navbar-row__link" href="#clinic">О клинике</a><a class="navbar-row__link" href="#features">Особенности операции</a><a class="navbar-row__link" href="#rehab">Реабилитация</a></nav><a class="btn btn_blue navbar__call" data-popup="data-popup">Записаться</a><svg class="header__burger" width="32" height="32" viewBox="0 0 32 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="32" height="2px" fill="black"/>
+<rect x="0" y="8" width="20" height="2px" fill="black"/>
+</svg>
         </div>
       </section>
       <section class="banner">
@@ -44,9 +50,9 @@
             <h1 class="banner-main-grid__title">Ринопластика</h1>
             <p class="banner-main-grid__text">Красивый и аккуратный нос привлекает внимание к лицу не меньше, чем глаза. И каждому хочется, чтобы данная область идеально подчеркивала черты лица и не портила отражение в зеркале</p>
             <div class="banner-main-grid-bot">
-              <button class="btn btn_blue">Запись на консультацию</button>
+              <button class="btn btn_blue" data-popup="data-popup">Запись на консультацию</button>
               <p class="banner-main-grid-bot__price">от 165 000 руб</p>
-            </div><a class="banner-main-grid__aboutDoctor" href="#form">
+            </div><a class="banner-main-grid__aboutDoctor" href="#about">
               Узнать о враче<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.35355 4.35355C9.54882 4.15829 9.54882 3.84171 9.35355 3.64645L6.17157 0.464466C5.97631 0.269204 5.65973 0.269204 5.46447 0.464466C5.2692 0.659728 5.2692 0.976311 5.46447 1.17157L8.29289 4L5.46447 6.82843C5.2692 7.02369 5.2692 7.34027 5.46447 7.53553C5.65973 7.7308 5.97631 7.7308 6.17157 7.53553L9.35355 4.35355ZM0 4.5H9V3.5H0V4.5Z" fill="black" fill-opacity="0.75"/>
 </svg></a>
@@ -157,6 +163,7 @@
             <p class="result-item__text">Результат через месяц 6</p>
           </div>
         </div>
+        <button class="btn btn_white result__more">Смотреть еще</button>
       </section>
       <section class="w1400 views" id="views">
         <p class="views__title" data-aos="fade-up" data-aos-delay="700">Виды ринопластики</p>
@@ -172,8 +179,7 @@
             <div class="blocks__block" data-tabs="2">Закрытая ринопластика: более сложный метод  и требует от доктора, практически, ювелирной точности работы. Все разрезы при такой манипуляции скрыты и проводится внутри на слизистой оболочке. Главное преимущество - сохранение всех мягкотканных структур в том числе основных связок Scroll и Pitanguy, что в свою очередь дает более естественный вид носа.</div>
             <div class="blocks__block" data-tabs="3">Безоперационная ринопластика: это менее радикальная методика, которая позволяет без хирургического вмешательства устранить незначительные дефекты с помощью филлеров на основе гиалуроновой кислоты или специальных нитей.</div>
           </div>
-        </div>
-        <button class="btn btn_white">О враче</button>
+        </div><a class="btn btn_white views__btn" href="#about">О враче</a>
         <div class="views-woman" data-aos="fade-left" data-aos-duration="700"><img src="assets/images/girl-views.png" alt="Виды ринопластики"/></div>
       </section>
       <section class="stages-wrap" id="stages">
@@ -314,9 +320,21 @@
             </button>
           </div>
           <div class="clinic-slider">
-            <div class="clinic-slider__item"><img src="assets/images/clinic.png" alt="Клиника"/></div>
-            <div class="clinic-slider__item"><img src="assets/images/clinic.png" alt="Клиника"/></div>
-            <div class="clinic-slider__item"><img src="assets/images/clinic.png" alt="Клиника"/></div>
+            <div class="clinic-slider__item">
+              <picture>
+                <source srcset="assets/images/clinic.jp2" type="image/jp2"/><img src="assets/images/clinic.png" alt="Клиника"/>
+              </picture>
+            </div>
+            <div class="clinic-slider__item">
+              <picture>
+                <source srcset="assets/images/clinic.jp2" type="image/jp2"/><img src="assets/images/clinic.png" alt="Клиника"/>
+              </picture>
+            </div>
+            <div class="clinic-slider__item">
+              <picture>
+                <source srcset="assets/images/clinic.jp2" type="image/jp2"/><img src="assets/images/clinic.png" alt="Клиника"/>
+              </picture>
+            </div>
           </div>
         </div>
         <div class="clinic-desc-wrap">
@@ -359,7 +377,7 @@
               </div>
             </div>
             <div class="clinic-desc-bot">
-              <button class="btn btn_white" data-aos="fade-up">Хочу на экскурсию</button><a class="clinic-desc-bot__link" href="#" data-aos="fade-up" data-aos-delay="100">Лицензия на осуществление <br>медицинской деятельности №76-843</a>
+              <button class="btn btn_white" data-aos="fade-up" data-popup="data-popup">Хочу на экскурсию</button><a class="clinic-desc-bot__link" href="#" data-aos="fade-up" data-aos-delay="100">Лицензия на осуществление <br>медицинской деятельности №76-843</a>
             </div>
           </div>
         </div>
@@ -395,7 +413,7 @@
             </div>
           </div>
         </div>
-        <button class="btn btn_white views__btn">Онлайн консультация</button>
+        <button class="btn btn_white views__btn" data-popup="data-popup">Онлайн консультация</button>
         <div class="views-woman" data-aos="fade-left" data-aos-duration="700"><img src="assets/images/features.png" alt="Особенности операции по ринопластике"/></div>
       </section>
       <section class="recomended-wrap">
@@ -516,7 +534,7 @@
                 </label>
               </div>
               <div class="form-left-bot">
-                <button class="btn btn_blue form-left-bot" type="submit" data-type="submit">Жду звонка</button>
+                <button class="btn btn_blue form-left-bot__btn" type="submit" data-type="submit">Жду звонка</button>
                 <p class="form-left-bot__text">Отправляя личные данные, Вы соглашаетесь с политикой конфиденциальности</p>
               </div>
             </form>
@@ -534,6 +552,47 @@
           </div>
         </div>
       </section>
+      <form class="form-popup">
+        <div class="form-popup-wrap">
+          <p class="form-wrap__title">Задайте свой вопрос напрямую
+            <div class="form-wrapperFields">
+              <label class="form-label">Ваше имя
+                <input type="text" data-required="true" data-type="text" placeholder="Напишите Ваше имя"/>
+                <p class="form-label__alert">Это обязательное поле</p>
+              </label>
+              <label class="form-label">Телефон
+                <input type="text" data-required="true" data-type="tel" placeholder="+7 (999) 999-99-99"/>
+                <p class="form-label__alert">Это обязательное поле</p>
+              </label>
+              <label class="form-label form-label_comment">Комментарий
+                <input type="text" data-type="text" placeholder="Краткое изложение целей сделает разговор продуктивнее"/>
+              </label>
+              <label class="form-label form-label_file">
+                <div class="form-file-overlay"></div>
+                <input type="file" multiple="multiple"/>
+                <div class="form-file"><svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.125 20C1.85048 20 0 18.4229 0 16.4844V4.6875C0 2.10281 2.4673 0 5.5 0C8.5327 0 11 2.10281 11 4.6875V16.4844H9.625V4.6875C9.625 2.74898 7.77452 1.17188 5.5 1.17188C3.22548 1.17188 1.375 2.74898 1.375 4.6875V16.4844C1.375 17.7767 2.60865 18.8281 4.125 18.8281C5.64135 18.8281 6.875 17.7767 6.875 16.4844V7.03125C6.875 6.38508 6.25817 5.85938 5.5 5.85938C4.74183 5.85938 4.125 6.38508 4.125 7.03125V16.4844H2.75V7.03125C2.75 5.73891 3.98365 4.6875 5.5 4.6875C7.01635 4.6875 8.25 5.73891 8.25 7.03125V16.4844C8.25 18.4229 6.39952 20 4.125 20Z" fill="black"/>
+</svg>
+                  <div class="form-file-block">
+                    <p class="form-file__title">Прикрепить фото</p>
+                    <p class="form-file__text">До 20 мб</p>
+                  </div>
+                </div>
+                <div class="form-file__close"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 9L5 5M9 1L5 5M5 5L9 9M5 5L1 1" stroke="rgba(0, 0, 0, 0.25)" stroke-linecap="round"/>
+</svg>
+                </div>
+              </label>
+            </div>
+            <div class="form-left-bot">
+              <button class="btn btn_blue form-left-bot__btn" type="submit" data-type="submit">Жду звонка</button>
+              <p class="form-left-bot__text">Отправляя личные данные, Вы соглашаетесь с политикой конфиденциальности</p>
+            </div>
+          </p><svg class="form-popup__close" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 33L17 17M33 1L17 17M17 17L33 33M17 17L1 1" stroke="black" stroke-width="2"/>
+</svg>
+        </div>
+      </form>
       <div class="success">
         <p class="success__text">
           👍<br>
