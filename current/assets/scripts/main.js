@@ -12,7 +12,9 @@ function slideTabs(_this){
 /* сдвиг от правой стороны хедера и серого меню */
 function moveHeader (){
   $('.header__burger').css('margin-right', Math.round($('.banner-main-woman img').width() * 0.74))
-  $('.header-gray').css('width', $('.header-overlay').width() - $('.header-info__phone').offset().left + 80)
+  setTimeout(function(){
+    $('.header-gray').css('width', $('.header-overlay').width() - $('.header-info__phone').offset().left + 80)
+  }, 401)
 }
 /* сдвиг от правой стороны хедера и серого меню end */
 
@@ -42,15 +44,31 @@ $(window).on('load', function () {
   moveHeader();
   setTimeout(function(){
     $('.preloader img').fadeOut();
+    
+    $('.banner-main-woman img').on('load', function() {
+      setTimeout(function(){
+        moveHeader();
+      }, 1)
+    });
     setTimeout(function(){
+      
       $('.preloader').fadeOut();
       AOS.init({
         disable: 'mobile'
       });
+
     }, 1000);
   }, 1600)
 });
 /* preloader + aos + moveheader end */
+
+/* ресайз табов */
+function resizeTabs(){
+  if(screen.width > 1023){
+    $(this).find('.blocks').css('height', $(this).find('.blocks__block.active').height());
+  }
+}
+/* ресайз табов end */
 
 
 $(document).ready(function(){
@@ -64,9 +82,7 @@ $(document).ready(function(){
   /* табы */
   $('.tabs-wrap').each(function(){
     slideTabs($(this));
-    if(screen.width > 1023){
-      $(this).find('.blocks').css('height', $(this).find('.blocks__block.active').height());
-    }
+    resizeTabs();
   })
 
 
@@ -173,11 +189,13 @@ $(document).ready(function(){
       }
     })
     if(valid) {
+      $('.success').fadeIn().css('display', 'flex');
       if(_form.hasClass('form-popup')){
-        _form.fadeOut(200);
+        setTimeout(function(){
+          _form.hide();
+        }, 400)
       }
       console.log('Отправили форму');
-      $('.success').fadeIn().css('display', 'flex');
       $(this).closest('form').find('input').val('');
       setTimeout(function(){
         $('.success').fadeOut();
@@ -288,14 +306,10 @@ $(document).ready(function(){
 
   
   /* header position */ 
-  $('.banner-main-woman img').on('load', function() {
-    setTimeout(function(){
-      moveHeader();
-    }, 1)
-  });
 
   $(window).resize(function(){
     moveHeader();
+    resizeTabs();
   })
 
   /*setInterval(function(){
@@ -413,10 +427,3 @@ $(document).ready(function(){
     $('.form-popup').fadeIn().css('display', 'flex');
   })
 });
-
-
-
-
-
-
-
