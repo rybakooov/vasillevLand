@@ -288,9 +288,6 @@ $(document).ready(function(){
 
   
   /* header position */ 
-
-  
-
   $('.banner-main-woman img').on('load', function() {
     setTimeout(function(){
       moveHeader();
