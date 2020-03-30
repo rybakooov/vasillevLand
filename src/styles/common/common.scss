@@ -18,6 +18,11 @@ input{
   width: 100%;
 } 
 
+
+[data-aos]{
+  transition-duration: .1s;
+}
+
 .wrapper{
   overflow: hidden;
 }
