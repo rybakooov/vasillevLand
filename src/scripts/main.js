@@ -1,3 +1,16 @@
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+// We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+
+
 
 /* табы */
 function slideTabs(_this){
@@ -11,6 +24,13 @@ function slideTabs(_this){
 
 /* сдвиг от правой стороны хедера и серого меню */
 function moveHeader (){
+  if(screen.width >= 1024 && screen.width <= 1200){
+    $('.header__burger').css('margin-right', Math.round($('.banner-main-woman img').width() * 0.74) - 280)
+    setTimeout(function(){
+      $('.header-gray').css('width', $('.header-overlay').width() - $('.header-info__phone').offset().left + 360)
+    }, 401)
+    return false
+  }
   $('.header__burger').css('margin-right', Math.round($('.banner-main-woman img').width() * 0.74))
   setTimeout(function(){
     $('.header-gray').css('width', $('.header-overlay').width() - $('.header-info__phone').offset().left + 80)

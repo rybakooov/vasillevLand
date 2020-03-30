@@ -7,6 +7,7 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: fixed;
   top: 0;
   left: 0;
@@ -25,6 +26,7 @@ input:focus{
 }
 .banner{
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   min-height: 600px;
   display: flex;
   flex-direction: column;
@@ -215,6 +217,7 @@ input:focus{
   &-woman{
     position: absolute;
     bottom: 0;
+    z-index: -1;
     right: 0;
   }
   .btn{
@@ -337,6 +340,7 @@ input:focus{
   display: flex;
   padding-top: 120px;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   min-height: 700px;
   position: relative;
   &-img{
@@ -456,6 +460,7 @@ input:focus{
     }
     &-wrap{
       height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
       min-height: 600px;
       position: relative;
     }
@@ -694,6 +699,7 @@ input:focus{
         width: 26px;
         position: relative;
         height: 26px;
+        margin-left: 10px;
         flex-shrink: 0;
         span{
           width: 26px;
@@ -936,11 +942,13 @@ input:focus{
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background: #F7F7F7;
+  height: calc(var(--vh, 1vh) * 100);
+  background: rgb(177, 166, 166);
   z-index: 10;
   &-wrap{
     padding: 24px;
     max-height: 100vh;
+    max-height: calc(var(--vh, 1vh) * 100);
     overflow: auto;
   }
   &__close{
@@ -983,9 +991,6 @@ input:focus{
     padding-left: 20px;
   }
 
-  .banner{
-    height: auto;
-  }
   .result{
     padding-top: 100px;
   }
@@ -1010,8 +1015,62 @@ input:focus{
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1200px){
+  .banner-main-woman{
+    right: -280px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1350px){
+  .banner-bot{
+    flex-wrap: wrap;
+    &-item{
+      width: calc(100% / 3 - 80px);
+      margin: 40px !important;
+    }
+  }
+  .result-item{
+    width: calc(50% - 40px);
+  }
+  .banner{
+    height: auto;
+    &-main{
+      padding-top: 220px;
+      padding-bottom: 40px;
+    }
+  }
+  .stages-item__title{
+    text-align: center;
+  }
+  .stages-item__title{
+    font-size: 18px;
+  }
+  .about-block-row__when{
+    width: 240px;
+  }
+  .features .views-woman{
+    transform: none;
+  }
+  .views-woman{
+    width: 77%;
+    margin-right: -14%;
+  }
+  .form-right__quick{
+    display: none;
+  }
+  .form-right{
+    flex: 1 1 288px;
+    padding-left: 40px;
+  }
+  .form-left{
+    flex: 1 1 calc(100% - 440px);
+  }
+}
 
 @media screen and (max-width: 1023px){
+  .banner{
+    height: auto;
+  }
   .clinic-desc-main-item:not(:last-child){
     border-right: none;
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -1032,19 +1091,6 @@ input:focus{
   }
   .banner-main-woman{
     right: -384px;
-  }
-  .header__burger{
-    margin-right: 150px !important;
-  }
-  .header-gray{
-    width: 100% !important;
-  }
-  .header-nav__link{
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .header-gray{
-    padding-left: 40px;
   }
   .banner-bot{
     flex-wrap: wrap;
@@ -1123,7 +1169,7 @@ input:focus{
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    //justify-content: flex-end;
     .stages-item-desc{
       padding-left: 0px;
       padding-right: 80px;
@@ -1298,6 +1344,9 @@ input:focus{
   }
   .about-block-row__when{
     width: 20%;
+  }
+  .stages-item{
+    justify-content: center !important;
   }
 }
 

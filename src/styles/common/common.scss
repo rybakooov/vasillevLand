@@ -4,6 +4,13 @@ body{
 a{
   text-decoration: none;
 }
+input{
+  border-radius: 0px !important;
+  -webkit-appearance: none !important;
+  -webkit-border-radius: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 .w1400{
   max-width: 1400px;
   padding: 0 20px;
@@ -74,3 +81,10 @@ button{
     }
   }
 } 
+
+@media screen and (max-width: 1350px) and (min-width: 1024px){
+  .w1400{
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
